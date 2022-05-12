@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        #change-me{
+            position: absolute;
+            top: 100px;
+            left: 200px;
+            font: 24px Arial;
+            background-color: #D8B36E;
+            width: 500px;
+            height: 500px;
+            border: 1px solid green;
+        }
+
+        .colors {
+            background-color: #ff253a;
+        }
+
+        #move-up, #move-down, #color, #disappear {
+            padding: 5px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button id="move-up">Move Up</button>
+    <button id="move-down">Move Down</button>
+    <button id="color">Add Color</button>
+    <button id="disappear">Disappear/Re-apppear</button>
+    <div id="change-me">Make Me Do Stuff</div>
+    <script>
+        $(document).ready(function () {
+            $("#move-up").click(function (){
+               $("#change-me").animate({
+                   top: 50, fontSize: '50px', opacity: 0.3
+               },500);
+               });
+
+            $("#move-down").click(function () {
+               $("#change-me").animate({top:500, },2000)
+            });
+
+            $("#color").click(function () {
+               $("#change-me").css({"background-color" : "red", "color": "#fff"})
+            });
+
+            $("#disappear").click(function () {
+                $("#change-me").toggle('slow')
+            });
+
+            });
+
+    </script>
+</body>
+</html>
